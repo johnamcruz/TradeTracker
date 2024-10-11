@@ -13,7 +13,7 @@ struct Transaction: Codable {
     let settleDate: Date
     let instrument: String
     let description: String
-    let transCode: String
+    let transCode: TradeAction
     let quantity: String
     let price: String
     let amount: String

@@ -10,9 +10,16 @@ import Testing
 
 struct TradeHistoryServiceTests {
 
-    @Test func getTradeHistory() async throws {
-        let service = MockTradeHistoryService()
-        _ = try await service.getTradeHistory()
+    @Test func getTransactionHistory() async throws {
+        let service = MockTransactionHistoryService()
+        let transactions = try await service.getTransactionHistory()
+        #expect(transactions.count > 0)
     }
 
+    @Test func getTradeHistory() async throws {
+        let service = MockTransactionHistoryService()
+        let tradeService = TradeHistoryService(service: service)
+        let trades = try await tradeService.getTradeHistory()
+        #expect(trades.count > 0)
+    }
 }
