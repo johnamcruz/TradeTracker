@@ -6,8 +6,23 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6B58103C2CB919F900A7B1E5 /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 6B58103B2CB919F900A7B1E5 /* CodableCSV */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6B5810482CB9B01000A7B1E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6B580F9E2CB7111900A7B1E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B580FA52CB7111900A7B1E5;
+			remoteInfo = TradeTracker;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		6B580FA62CB7111900A7B1E5 /* TradeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B5810442CB9B01000A7B1E5 /* TradeTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TradeTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +31,23 @@
 			path = TradeTracker;
 			sourceTree = "<group>";
 		};
+		6B5810452CB9B01000A7B1E5 /* TradeTrackerTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TradeTrackerTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6B580FA32CB7111900A7B1E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B58103C2CB919F900A7B1E5 /* CodableCSV in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B5810412CB9B01000A7B1E5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				6B580FA82CB7111900A7B1E5 /* TradeTracker */,
+				6B5810452CB9B01000A7B1E5 /* TradeTrackerTests */,
 				6B580FA72CB7111900A7B1E5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				6B580FA62CB7111900A7B1E5 /* TradeTracker.app */,
+				6B5810442CB9B01000A7B1E5 /* TradeTrackerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,10 +95,34 @@
 			);
 			name = TradeTracker;
 			packageProductDependencies = (
+				6B58103B2CB919F900A7B1E5 /* CodableCSV */,
 			);
 			productName = TradeTracker;
 			productReference = 6B580FA62CB7111900A7B1E5 /* TradeTracker.app */;
 			productType = "com.apple.product-type.application";
+		};
+		6B5810432CB9B01000A7B1E5 /* TradeTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B58104A2CB9B01000A7B1E5 /* Build configuration list for PBXNativeTarget "TradeTrackerTests" */;
+			buildPhases = (
+				6B5810402CB9B01000A7B1E5 /* Sources */,
+				6B5810412CB9B01000A7B1E5 /* Frameworks */,
+				6B5810422CB9B01000A7B1E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B5810492CB9B01000A7B1E5 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6B5810452CB9B01000A7B1E5 /* TradeTrackerTests */,
+			);
+			name = TradeTrackerTests;
+			packageProductDependencies = (
+			);
+			productName = TradeTrackerTests;
+			productReference = 6B5810442CB9B01000A7B1E5 /* TradeTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -83,6 +137,10 @@
 					6B580FA52CB7111900A7B1E5 = {
 						CreatedOnToolsVersion = 16.0;
 					};
+					6B5810432CB9B01000A7B1E5 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 6B580FA52CB7111900A7B1E5;
+					};
 				};
 			};
 			buildConfigurationList = 6B580FA12CB7111900A7B1E5 /* Build configuration list for PBXProject "TradeTracker" */;
@@ -94,18 +152,29 @@
 			);
 			mainGroup = 6B580F9D2CB7111900A7B1E5;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				6B58103A2CB919F900A7B1E5 /* XCRemoteSwiftPackageReference "CodableCSV" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6B580FA72CB7111900A7B1E5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				6B580FA52CB7111900A7B1E5 /* TradeTracker */,
+				6B5810432CB9B01000A7B1E5 /* TradeTrackerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6B580FA42CB7111900A7B1E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B5810422CB9B01000A7B1E5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +191,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6B5810402CB9B01000A7B1E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6B5810492CB9B01000A7B1E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6B580FA52CB7111900A7B1E5 /* TradeTracker */;
+			targetProxy = 6B5810482CB9B01000A7B1E5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		6B580FB32CB7111A00A7B1E5 /* Debug */ = {
@@ -313,6 +397,50 @@
 			};
 			name = Release;
 		};
+		6B58104B2CB9B01000A7B1E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johnamcruz.TradeTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TradeTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TradeTracker";
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		6B58104C2CB9B01000A7B1E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johnamcruz.TradeTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TradeTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TradeTracker";
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -334,7 +462,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		6B58104A2CB9B01000A7B1E5 /* Build configuration list for PBXNativeTarget "TradeTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B58104B2CB9B01000A7B1E5 /* Debug */,
+				6B58104C2CB9B01000A7B1E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6B58103A2CB919F900A7B1E5 /* XCRemoteSwiftPackageReference "CodableCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dehesa/CodableCSV";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6B58103B2CB919F900A7B1E5 /* CodableCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6B58103A2CB919F900A7B1E5 /* XCRemoteSwiftPackageReference "CodableCSV" */;
+			productName = CodableCSV;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6B580F9E2CB7111900A7B1E5 /* Project object */;
 }

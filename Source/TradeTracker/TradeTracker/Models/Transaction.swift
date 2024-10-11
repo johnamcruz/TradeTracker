@@ -14,7 +14,19 @@ struct Transaction: Codable {
     let instrument: String
     let description: String
     let transCode: String
-    let quantity: Double
-    let price: Double
-    let amount: Double
+    let quantity: String
+    let price: String
+    let amount: String
+    
+    enum CodingKeys: String, CodingKey {
+        case activityDate = "Activity Date"
+        case processDate = "Process Date"
+        case settleDate = "Settle Date"
+        case instrument = "Instrument"
+        case description = "Description"
+        case transCode = "Trans Code"
+        case quantity = "Quantity"
+        case price = "Price"
+        case amount = "Amount"
+    }
 }
