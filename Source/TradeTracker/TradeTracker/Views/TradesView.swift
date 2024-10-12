@@ -13,11 +13,7 @@ struct TradesView: View {
     var body: some View {
         List {
             ForEach(trades) { trade in
-                HStack {
-                    /*@START_MENU_TOKEN@*/Text(trade.name)/*@END_MENU_TOKEN@*/
-                    Spacer()
-                    Text("\(trade.profitOrLoss)")
-                }
+                TradeView(viewModel: trade)
             }
         }
     }
