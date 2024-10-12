@@ -11,7 +11,7 @@ import SwiftUI
 struct TradeTrackerApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainView(service: TradeHistoryService(service: MockTransactionHistoryService()))
         }
     }
 }

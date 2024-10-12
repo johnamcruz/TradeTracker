@@ -58,3 +58,9 @@ struct Trade: Codable {
         totalSold - totalBought
     }
 }
+
+extension Trade {
+    func toTradeViewModel() -> TradeViewModel {
+        TradeViewModel(name: self.name, profitOrLoss: self.profitOrLoss)
+    }
+}

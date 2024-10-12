@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct TradesView: View {
+    let trades: [TradeViewModel]
+    
     var body: some View {
         List {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            ForEach(trades) { trade in
+                HStack {
+                    /*@START_MENU_TOKEN@*/Text(trade.name)/*@END_MENU_TOKEN@*/
+                    Spacer()
+                    Text("\(trade.profitOrLoss)")
+                }
+            }
         }
     }
 }
 
 #Preview {
-    TradesView()
+    TradesView(trades: [])
 }

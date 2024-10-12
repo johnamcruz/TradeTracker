@@ -6,15 +6,20 @@
 //
 
 import SwiftUI
+import Charts
 
 struct DashboardView: View {
+    let trades: [TradeViewModel]
+    
     var body: some View {
         NavigationStack {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Chart {
+                
+            }
         }
     }
 }
 
 #Preview {
-    DashboardView()
+    DashboardView(trades: [])
 }
