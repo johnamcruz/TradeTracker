@@ -26,11 +26,7 @@ struct MockTransactionHistoryService: TransactionHistoryServiceable  {
             }
             
             if let url = Bundle.main.url(forResource: "robinhood-data", withExtension: "csv") {
-                let results = try decoder.decode([Transaction].self, from: url)
-                for result in results {
-                    print(result.description)
-                }
-                return results
+                return try decoder.decode([Transaction].self, from: url)
             }
             return []
         } catch {

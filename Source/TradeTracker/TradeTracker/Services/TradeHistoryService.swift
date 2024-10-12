@@ -17,6 +17,13 @@ struct TradeHistoryService: TradeHistoryServiceable {
     }
     
     func getTradeHistory() async throws -> [Trade] {
-        []
+        if let transactions = try? await service.getTransactionHistory() {
+            var dictionary = [String: [Transaction]]()
+            for transaction in transactions.filter({ $0.transCode == .buyToOpen || $0.transCode == .sellToClose }) {
+                dictionary[transaction.description, default: []].append(transaction)
+            }
+            return dictionary.map { Trade(name: $0.key, transactions: $0.value) }
+        }
+        return []
     }
 }

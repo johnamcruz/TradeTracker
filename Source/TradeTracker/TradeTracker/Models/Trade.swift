@@ -7,15 +7,52 @@
 import Foundation
 
 struct Trade: Codable {
-    var instrument: String
-    var description: String
+    var name: String
     var transactions: [Transaction]
-    var totalQuantity: Int
-    var totalAmount: Double
-    var totalBought: Double
-    var totalSold: Double
-    var totalBoughtQty: Int
-    var totalSoldQty: Int
+    
+    init(name: String, transactions: [Transaction]) {
+        self.name = name
+        self.transactions = transactions
+    }
+    
+    var instrument: String {
+        transactions.first?.instrument ?? ""
+    }
+    
+    var totalQuantity: Int {
+        if let transaction = transactions.first(where: { $0.transCode == .buyToOpen }) {
+            return Int(transaction.quantity) ?? 0
+        }
+        return 0
+    }
+    
+    var totalAmount: Double {
+        transactions.reduce(0) { $0 + (Double($1.amount.replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "$", with: "").replacingOccurrences(of: " ", with: "")) ?? 0.0) }
+    }
+        
+    var totalBought: Double {
+        transactions
+            .filter { $0.transCode == .buyToOpen }
+            .reduce(0) { $0 + (Double($1.amount.replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "$", with: "").replacingOccurrences(of: " ", with: "")) ?? 0.0) }
+    }
+        
+    var totalSold: Double {
+        transactions
+            .filter { $0.transCode == .sellToClose }
+            .reduce(0) { $0 + (Double($1.amount.replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "$", with: "").replacingOccurrences(of: " ", with: "")) ?? 0.0) }
+    }
+        
+    var totalBoughtQty: Int {
+        transactions
+            .filter { $0.transCode == .buyToOpen }
+            .reduce(0) { $0 + (Int($1.quantity) ?? 0) }
+    }
+        
+    var totalSoldQty: Int {
+        transactions
+            .filter { $0.transCode == .sellToClose }
+            .reduce(0) { $0 + (Int($1.quantity) ?? 0) }
+    }
     
     var profitOrLoss: Double {
         totalSold - totalBought
