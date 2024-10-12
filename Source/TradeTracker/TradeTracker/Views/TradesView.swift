@@ -20,5 +20,5 @@ struct TradesView: View {
 }
 
 #Preview {
-    TradesView(trades: [])
+    TradesView(trades: TradeViewModel.mock())
 }

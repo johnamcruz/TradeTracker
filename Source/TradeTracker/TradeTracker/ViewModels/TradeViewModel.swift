@@ -30,3 +30,15 @@ struct TradeViewModel: Identifiable {
         totalSold - totalBought
     }
 }
+
+extension TradeViewModel {
+    static func mock() -> [TradeViewModel] {
+        [
+            TradeViewModel(name: "QQQ 10/9/2024 Call $493.00", totalBought: 100, totalSold: 50),
+            TradeViewModel(name: "IWM 10/9/2024 Put $219.00", totalBought: 100, totalSold: 50),
+            TradeViewModel(name: "NVDA 10/11/2024 Call $135.00", totalBought: 100, totalSold: 50),
+            TradeViewModel(name: "GOOG 10/11/2024 Call $165.00", totalBought: 100, totalSold: 50),
+            TradeViewModel(name: "INTC 10/11/2024 Call $23.00", totalBought: 100, totalSold: 50)
+        ]
+    }
+}
