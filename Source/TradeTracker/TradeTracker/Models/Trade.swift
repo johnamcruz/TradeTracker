@@ -53,14 +53,10 @@ struct Trade: Codable {
             .filter { $0.transCode == .sellToClose }
             .reduce(0) { $0 + (Int($1.quantity) ?? 0) }
     }
-    
-    var profitOrLoss: Double {
-        totalSold - totalBought
-    }
 }
 
 extension Trade {
     func toTradeViewModel() -> TradeViewModel {
-        TradeViewModel(name: self.name, profitOrLoss: self.profitOrLoss)
+        TradeViewModel(name: self.name, totalBought: self.totalBought, totalSold: self.totalSold)
     }
 }

@@ -8,14 +8,25 @@ import SwiftUI
 
 struct TradeViewModel: Identifiable {
     var id: String
-    var name: String
-    var profitOrLoss: Double
-    var contract: OptionContract?
+    var totalBought: Double
+    var totalSold: Double
+    var ticker: String
+    var expirationDate: Date
+    var optionType: OptionType
+    var strikePrice: Double
     
-    init(name: String, profitOrLoss: Double) {
-        self.id = UUID().uuidString
-        self.name = name
-        self.profitOrLoss = profitOrLoss
-        self.contract = OptionContract.parseOptionContract(from: name)
+    init(name: String, totalBought: Double, totalSold: Double) {
+        self.id = name
+        self.totalBought = totalBought
+        self.totalSold = totalSold
+        let contract = OptionContract.parseOptionContract(from: name)
+        self.ticker = contract?.ticker ?? ""
+        self.expirationDate = contract?.expirationDate ?? Date()
+        self.optionType = contract?.optionType ?? .call
+        self.strikePrice = contract?.strikePrice ?? 0
+    }
+    
+    var profitOrLoss: Double {
+        totalSold - totalBought
     }
 }

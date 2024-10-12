@@ -14,9 +14,9 @@ struct TradeView: View {
         HStack(spacing: 0) {
             VStack(spacing: 0) {
                 HStack {
-                    Text(viewModel.contract?.ticker ?? "")
-                    Text("\(viewModel.contract?.strikePrice ?? 0)")
-                    Text(viewModel.contract?.optionType.rawValue ?? "")
+                    Text(viewModel.ticker)
+                    Text("\(viewModel.strikePrice)")
+                    Text(viewModel.optionType.rawValue)
                 }
             }
             Spacer()
@@ -27,5 +27,5 @@ struct TradeView: View {
 }
 
 #Preview {
-    TradeView(viewModel: TradeViewModel(name: "QQQ 10/9/2024 Call $493.00", profitOrLoss: 100))
+    TradeView(viewModel: TradeViewModel(name: "QQQ 10/9/2024 Call $493.00", totalBought: 100, totalSold: 50))
 }
