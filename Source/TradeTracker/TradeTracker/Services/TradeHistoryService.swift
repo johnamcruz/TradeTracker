@@ -4,6 +4,7 @@
 //
 //  Created by John M Cruz on 10/11/24.
 //
+import Foundation
 
 protocol TradeHistoryServiceable {
     func getTradeHistory() async throws -> [Trade]
@@ -22,7 +23,9 @@ struct TradeHistoryService: TradeHistoryServiceable {
             for transaction in transactions.filter({ $0.transCode == .buyToOpen || $0.transCode == .sellToClose }) {
                 dictionary[transaction.description, default: []].append(transaction)
             }
-            return dictionary.map { Trade(name: $0.key, transactions: $0.value) }
+            return dictionary.map { Trade(name: $0.key,
+                                          activityDate: $0.value.first?.activityDate ?? Date(),
+                                          transactions: $0.value) }
         }
         return []
     }

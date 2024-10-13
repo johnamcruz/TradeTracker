@@ -18,18 +18,18 @@ struct MainView: View {
     
     var body: some View {
         TabView {
-            Tab("Received", systemImage: "tray.and.arrow.down.fill") {
+            Tab("Dashboard", systemImage: Images.dashboardImage) {
                 DashboardView(trades: trades)
             }
             .badge(2)
 
 
-            Tab("Sent", systemImage: "tray.and.arrow.up.fill") {
+            Tab("Trades", systemImage: Images.tradeHistoryImage) {
                 TradesView(trades: trades)
             }
 
 
-            Tab("Account", systemImage: "person.crop.circle.fill") {
+            Tab("Account", systemImage: Images.acountImage) {
                 AccountView()
             }
             .badge("!")

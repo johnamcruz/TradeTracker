@@ -27,5 +27,5 @@ struct TradeView: View {
 }
 
 #Preview {
-    TradeView(viewModel: TradeViewModel(name: "QQQ 10/9/2024 Call $493.00", totalBought: 100, totalSold: 50))
+    TradeView(viewModel: TradeViewModel(name: "QQQ 10/9/2024 Call $493.00", activityDate: Date(), totalBought: 100, totalSold: 50))
 }

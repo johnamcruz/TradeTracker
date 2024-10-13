@@ -13,8 +13,14 @@ struct DashboardView: View {
     
     var body: some View {
         NavigationStack {
+            // Profit and Loss (P&L) Over Time
             Chart {
-                
+                ForEach(trades) { trade in
+                    LineMark(
+                        x: .value("Date", trade.activityDate),
+                        y: .value("P/L", trade.profitOrLoss)
+                    )
+                }
             }
         }
     }

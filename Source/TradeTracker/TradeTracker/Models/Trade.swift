@@ -8,10 +8,12 @@ import Foundation
 
 struct Trade: Codable {
     var name: String
+    var activityDate: Date
     var transactions: [Transaction]
     
-    init(name: String, transactions: [Transaction]) {
+    init(name: String, activityDate: Date, transactions: [Transaction]) {
         self.name = name
+        self.activityDate = activityDate
         self.transactions = transactions
     }
     
@@ -57,6 +59,9 @@ struct Trade: Codable {
 
 extension Trade {
     func toTradeViewModel() -> TradeViewModel {
-        TradeViewModel(name: self.name, totalBought: self.totalBought, totalSold: self.totalSold)
+        TradeViewModel(name: self.name,
+                       activityDate: self.activityDate,
+                       totalBought: self.totalBought,
+                       totalSold: self.totalSold)
     }
 }
