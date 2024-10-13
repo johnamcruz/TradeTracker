@@ -19,7 +19,7 @@ struct MainView: View {
     var body: some View {
         TabView {
             Tab("Dashboard", systemImage: Images.dashboardImage) {
-                DashboardView(trades: trades)
+                DashboardView(viewModel: DashboardViewModel(trades: trades))
             }
             .badge(2)
 
