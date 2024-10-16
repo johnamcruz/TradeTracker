@@ -11,10 +11,14 @@ struct TradesView: View {
     let trades: [TradeViewModel]
     
     var body: some View {
-        List {
-            ForEach(trades) { trade in
-                TradeView(viewModel: trade)
+        NavigationStack {
+            List {
+                ForEach(trades) { trade in
+                    TradeView(viewModel: trade)
+                }
             }
+            .listStyle(.plain)
+            .navigationTitle("Trades")
         }
     }
 }

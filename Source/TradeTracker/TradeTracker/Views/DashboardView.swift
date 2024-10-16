@@ -31,6 +31,7 @@ struct DashboardView: View {
             .chartYAxis {
                 AxisMarks(position: .leading)
             }
+            .navigationTitle("Dashboard")
         }
     }
 }
